@@ -37,6 +37,11 @@ def main():
         default=3,
         help="Number of relevant chunks to retrieve"
     )
+    parser.add_argument(
+        "--model",
+        default="gemini-3.8-flash",
+        help="Gemini model name (e.g., gemini-3.8-flash, gemini-2.5-flash, gemini-2.0-flash)"
+    )
     args = parser.parse_args()
 
     print("=" * 60)
@@ -81,7 +86,7 @@ def main():
 
     # 4. Create Gemini LLM
     print("\n--- Initializing Gemini LLM ---")
-    llm = GeminiLLM()
+    llm = GeminiLLM(model_name=args.model)
 
     # 5. Create RAG pipeline
     rag = RAGPipeline(
