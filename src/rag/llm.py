@@ -85,10 +85,10 @@ class GeminiLLM:
 
         # If all models failed due to quota limits
         return (
-            "⚠️ API Quota Limit Exceeded: The Gemini Free Tier daily limit (20 requests/day per model) "
+            "[Quota Limit Exceeded] The Gemini Free Tier daily limit (20 requests/day per model) "
             "has been reached for your API key.\n\n"
             "Options to fix this:\n"
-            "1. Wait for the quota reset period to expire.\n"
-            "2. Use a different Gemini API Key in your .env file.\n"
-            "3. Upgrade your Google AI Studio key billing settings."
+            "1. Wait for the quota reset period (e.g. 14 hours) to expire.\n"
+            "2. Supply a new GEMINI_API_KEY in your .env file.\n"
+            "3. Enable pay-as-you-go billing in Google AI Studio."
         )
