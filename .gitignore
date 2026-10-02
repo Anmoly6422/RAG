@@ -1,5 +1,9 @@
 .venv/
 .env
+.env.*
+!.env.example
 __pycache__/
+*.py[cod]
 .ipynb_checkpoints/
 data/vector_store/
+*.sqlite3
